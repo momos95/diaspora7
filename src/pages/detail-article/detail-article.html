@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Diaspora7</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+
+    <img src="{{article.image}}"/>
+
+    <ion-card-content>
+      <ion-card-title>
+        <b [innerHTML]="article.title" color="primary"></b>
+        <div [innerHTML]="article.content">
+        </div>
+      </ion-card-title>
+      <p>
+        {{article.date |  date:'dd/MM/yyyy HH:MM'}}
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col text-left>
+        <button ion-button clear small color="energy" icon-start (click)="aimer(article)">
+          <ion-icon name='heart'></ion-icon>
+          Aimer
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="energy" icon-start (click)="publier(article)">
+          <ion-icon name='share-alt'></ion-icon>
+          Publier
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+
+</ion-content>

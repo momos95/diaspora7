@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle color="danger" >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sport</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card *ngFor="let ar of articles">
+
+    <img src="{{ar.image}}"/>
+
+    <ion-card-content>
+      <ion-card-title>
+        <p [innerHTML]="ar.title"></p>
+
+      </ion-card-title>
+      <p>
+        {{ar.date}}
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col text-left>
+        <button ion-button clear small color="danger" icon-start (click)="detailArticle(ar)">
+          <ion-icon name='eye'></ion-icon>
+          Voir
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="danger" icon-start>
+          <ion-icon name='share-alt'></ion-icon>
+          Publier
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+
+</ion-content>
